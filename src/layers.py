@@ -80,10 +80,10 @@ class GraphConvolutionBS(Module):
         else:
             return self.sigma(output)
 
-    def __repr__(self):
-        return self.__class__.__name__ + ' (' \
-               + str(self.in_features) + ' -> ' \
-               + str(self.out_features) + ')'
+    # def __repr__(self):
+    #     return self.__class__.__name__ + ' (' \
+    #            + str(self.in_features) + ' -> ' \
+    #            + str(self.out_features) + ')'
 
 class GraphBaseBlock(Module):
     """
@@ -168,13 +168,13 @@ class GraphBaseBlock(Module):
     def get_outdim(self):
         return self.out_features
 
-    def __repr__(self):
-        return "%s %s (%d - [%d:%d] > %d)" % (self.__class__.__name__,
-                                              self.aggrmethod,
-                                              self.in_features,
-                                              self.hiddendim,
-                                              self.nhiddenlayer,
-                                              self.out_features)
+    # def __repr__(self):
+    #     return "%s %s (%d - [%d:%d] > %d)" % (self.__class__.__name__,
+    #                                           self.aggrmethod,
+    #                                           self.in_features,
+    #                                           self.hiddendim,
+    #                                           self.nhiddenlayer,
+    #                                           self.out_features)
 
 
 class MultiLayerGCNBlock(Module):
@@ -214,13 +214,13 @@ class MultiLayerGCNBlock(Module):
     def get_outdim(self):
         return self.model.get_outdim()
 
-    def __repr__(self):
-        return "%s %s (%d - [%d:%d] > %d)" % (self.__class__.__name__,
-                                              self.aggrmethod,
-                                              self.model.in_features,
-                                              self.model.hiddendim,
-                                              self.model.nhiddenlayer,
-                                              self.model.out_features)
+    # def __repr__(self):
+    #     return "%s %s (%d - [%d:%d] > %d)" % (self.__class__.__name__,
+    #                                           self.aggrmethod,
+    #                                           self.model.in_features,
+    #                                           self.model.hiddendim,
+    #                                           self.model.nhiddenlayer,
+    #                                           self.model.out_features)
 
 
 class ResGCNBlock(Module):
@@ -260,13 +260,13 @@ class ResGCNBlock(Module):
     def get_outdim(self):
         return self.model.get_outdim()
 
-    def __repr__(self):
-        return "%s %s (%d - [%d:%d] > %d)" % (self.__class__.__name__,
-                                              self.aggrmethod,
-                                              self.model.in_features,
-                                              self.model.hiddendim,
-                                              self.model.nhiddenlayer,
-                                              self.model.out_features)
+    # def __repr__(self):
+    #     return "%s %s (%d - [%d:%d] > %d)" % (self.__class__.__name__,
+    #                                           self.aggrmethod,
+    #                                           self.model.in_features,
+    #                                           self.model.hiddendim,
+    #                                           self.model.nhiddenlayer,
+    #                                           self.model.out_features)
 
 
 class DenseGCNBlock(Module):
@@ -306,13 +306,13 @@ class DenseGCNBlock(Module):
     def get_outdim(self):
         return self.model.get_outdim()
 
-    def __repr__(self):
-        return "%s %s (%d - [%d:%d] > %d)" % (self.__class__.__name__,
-                                              self.aggrmethod,
-                                              self.model.in_features,
-                                              self.model.hiddendim,
-                                              self.model.nhiddenlayer,
-                                              self.model.out_features)
+    # def __repr__(self):
+    #     return "%s %s (%d - [%d:%d] > %d)" % (self.__class__.__name__,
+    #                                           self.aggrmethod,
+    #                                           self.model.in_features,
+    #                                           self.model.hiddendim,
+    #                                           self.model.nhiddenlayer,
+    #                                           self.model.out_features)
 
 
 class InecptionGCNBlock(Module):
@@ -392,13 +392,13 @@ class InecptionGCNBlock(Module):
         elif self.aggrmethod == "add":
             return x + subx
 
-    def __repr__(self):
-        return "%s %s (%d - [%d:%d] > %d)" % (self.__class__.__name__,
-                                              self.aggrmethod,
-                                              self.in_features,
-                                              self.hiddendim,
-                                              self.nbaselayer,
-                                              self.out_features)
+    # def __repr__(self):
+    #     return "%s %s (%d - [%d:%d] > %d)" % (self.__class__.__name__,
+    #                                           self.aggrmethod,
+    #                                           self.in_features,
+    #                                           self.hiddendim,
+    #                                           self.nbaselayer,
+    #                                           self.out_features)
 
 
 class Dense(Module):
@@ -433,7 +433,7 @@ class Dense(Module):
         output = self.bn(output)
         return self.sigma(output)
 
-    def __repr__(self):
-        return self.__class__.__name__ + ' (' \
-               + str(self.in_features) + ' -> ' \
-               + str(self.out_features) + ')'
+    # def __repr__(self):
+    #     return self.__class__.__name__ + ' (' \
+    #            + str(self.in_features) + ' -> ' \
+    #            + str(self.out_features) + ')'
