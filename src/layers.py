@@ -79,6 +79,10 @@ class GraphConvolutionBS(Module):
             return self.sigma(output) + input
         else:
             return self.sigma(output)
+        
+    def normalize(self):
+        U, s, V = torch.svd(self.weight)
+        self.weight = Parameter(self.weight / s[0])
 
     # def __repr__(self):
     #     return self.__class__.__name__ + ' (' \
